@@ -11,7 +11,6 @@ exports.getAllRecipes = async (req, res) => {
 };
 
 exports.getRecipeById = async (req, res) => {
-  
   const { id } = req.params;
   console.log(id)
   try {
