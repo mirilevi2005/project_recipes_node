@@ -5,3 +5,5 @@ const RecipeSchema = new mongoose.Schema({
   recipeCategory: String,
   recipeInstructions: Array,
 });
+
+module.exports=mongoose.model('Recipe',RecipeSchema);
