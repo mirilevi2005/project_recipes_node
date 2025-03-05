@@ -31,3 +31,19 @@ exports.getRecipeById = async (req, res) => {
   }
 };
 
+exports.deleteRecipe = async (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  try {
+    const deleteRecipe = await Recipe.findOneAndDelete({ _id: id });
+    if (!deleteRecipe) {
+      return res.status(404).json({ message: 'User not found' });
+    }
+    res.json({ message: 'Recipe deleted successfully' });
+  } catch (error) {
+    console.error('Failed to delete Recipe:', error);
+    res.status(500).json({ message: 'Failed to delete Recipe' });
+  }
+};
+
+
