@@ -1,6 +1,6 @@
-const Resipe=require("../models/Recipe")
+const Recipe=require("../models/Recipe")
 exports.addRecipe = async (req, res) => {
-    const resipe = await Resipe.create(req.body);
-    res.json(resipe)
+    const resipe = await Recipe.create(req.body);
+    res.json(recipe)
 };
 
